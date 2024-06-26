@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.Pages.SeriesPage"
+             Title="SeriesPage"
+             Loaded="ContentPage_Loaded">
+    <StackLayout x:Name="slP" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image x:Name="imgBack" Aspect="Fill" ZIndex="1" IsVisible="False"/>
+            <StackLayout ZIndex="5">
+                <StackLayout.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="Transparent" 
+                                      Offset="0.1" />
+                        <GradientStop Color="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+                                      Offset="1.0" />
+                    </LinearGradientBrush>
+                </StackLayout.Background>
+                <ScrollView VerticalOptions="FillAndExpand"
+VerticalScrollBarVisibility="Always" ZIndex="5">
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <ActivityIndicator x:Name="aiLoading" IsVisible="True" IsRunning="True"/>
+                        <Label x:Name="lblTitle" FontSize="25" HorizontalTextAlignment="Center" Margin="5,15,5,25"/>
+                        <Image x:Name="imgAnimePicture" MaximumHeightRequest="250"/>
+                        <Label x:Name="lblEnTitle"  FontSize="13" Margin="15,5"/>
+
+                        <Label Text="Informacje" HorizontalOptions="Center" FontSize="Subtitle"/>
+                        <Frame Margin="15">
+                            <StackLayout>
+                                <Label FontAttributes="Bold" Text="Typ"/>
+                                <Label x:Name="lblType" />
+                                <Label FontAttributes="Bold" Text="Odcinki"/>
+                                <Label x:Name="lblEpisodes" />
+                                <Label FontAttributes="Bold" Text="Odcinki wychodzą w"/>
+                                <Label x:Name="lblbroadcast_day" />
+                                <Label FontAttributes="Bold" Text="Sezon"/>
+                                <Label x:Name="lblSeason" />
+                                <Label FontAttributes="Bold" Text="Początek emisji"/>
+                                <Label x:Name="lblaired_from" />
+                            </StackLayout>
+                        </Frame>
+
+                        <Button x:Name="btnMal" Margin="15" Text="MyAnimeList" Clicked="btnMal_Clicked"/>
+
+                        <Label Text="Opis" HorizontalOptions="Center" FontSize="Subtitle"/>
+                        <Label x:Name="lblDes" Margin="15"/>
+
+                        <ScrollView Orientation="Both" HorizontalScrollBarVisibility="Always">
+                            <HorizontalStackLayout x:Name="slG" IsVisible="True" MinimumHeightRequest="40"
+                       Margin="15"
+                       Spacing="10"/>
+                        </ScrollView>
+
+
+                        <FlexLayout x:Name="slEps"  Margin="15" Wrap="Wrap"/>
+
+                        <StackLayout x:Name="slStats" Margin="15,0"/>
+
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.UI.RelatedSeriesView"
+             x:Name="relatedseriesview">
+    <Frame>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton Source="{Binding ImageSource, Source={x:Reference relatedseriesview}}" VerticalOptions="FillAndExpand" Grid.Column="0" />
+            <StackLayout Grid.Column="1">
+                <Label Text="{Binding RelatedType, Source={x:Reference relatedseriesview}}" />
+                <Label Text="{Binding Title, Source={x:Reference relatedseriesview}}" />
+                <Label Text="{Binding TitleEn, Source={x:Reference relatedseriesview}}" />
+            </StackLayout>
+        </Grid>
+    </Frame>
+</ContentView>

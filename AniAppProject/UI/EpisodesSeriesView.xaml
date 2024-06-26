@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.UI.EpisodesSeriesView"
+             Loaded="ContentView_Loaded"
+             MinimumWidthRequest="150"
+             Margin="2"
+             >
+    <Frame
+        BackgroundColor="{AppThemeBinding Dark={StaticResource Gray900}, Light={StaticResource Gray200}}" 
+        CornerRadius="15" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <ImageButton x:Name="img" Grid.Row="0" Clicked="img_Clicked" Aspect="Fill" BackgroundColor="Transparent"/>
+            <Label x:Name="lblEp" Grid.Row="1" />
+            <Label x:Name="lblDate" Grid.Row="2"/>
+            <Button BackgroundColor="Transparent" ZIndex="3" VerticalOptions="FillAndExpand" Clicked="Button_Clicked"/>
+            <Button BackgroundColor="Transparent" Grid.Row="1" ZIndex="3" VerticalOptions="FillAndExpand" Clicked="Button_Clicked"/>
+            <Button BackgroundColor="Transparent" Grid.Row="2" VerticalOptions="FillAndExpand" Clicked="Button_Clicked"/>
+        </Grid>
+    </Frame>
+    
+</ContentView>

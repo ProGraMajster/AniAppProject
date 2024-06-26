@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.UI.PlayersForEpisodeView" Margin="3">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{OnIdiom Desktop=100, Phone=80}"/>
+            <ColumnDefinition Width="{OnIdiom Desktop=100, Phone=50}"/>
+            <ColumnDefinition Width="{OnIdiom Desktop=100, Phone=30}"/>
+            <ColumnDefinition Width="{OnIdiom Desktop=80, Phone=40}"/>
+            <ColumnDefinition Width="{OnIdiom Desktop=80, Phone=80}"/>
+        </Grid.ColumnDefinitions>
+        <Button BackgroundColor="Transparent"
+                TextColor="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource Black}}"
+                x:Name="btnTran" Grid.Column="0"/>
+        <Label x:Name="lblHosting" Grid.Column="1" VerticalTextAlignment="Center"/>
+        <Label x:Name="lblT" Grid.Column="2" VerticalTextAlignment="Center"/>
+
+        <Button Text="Oglądaj" x:Name="btnWatch"
+                Grid.Column="4"
+                Clicked="btnWatch_Clicked"/>
+
+    </Grid>
+</ContentView>

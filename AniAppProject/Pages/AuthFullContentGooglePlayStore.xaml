@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.Pages.AuthFullContentGooglePlayStore"
+             Title="AuthFullContentGooglePlayStore">
+    <StackLayout>
+        <Image Source="aniappprojecticonimage.png" MaximumHeightRequest="150" HorizontalOptions="Center" Margin="5"/>
+        <Label Text="AniApp" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"/>
+        <Label Margin="10"/>
+        <Label Text="Wpisz kod w pole tekstowe aby przejść dalej!" HorizontalOptions="Center"/>
+        <Label Text="Kod:" HorizontalOptions="Center" Margin="4"/>
+        <Label Text="2137" FontAttributes="Bold" HorizontalOptions="Center" FontSize="17"/>
+        <Entry x:Name="entry" Keyboard="Numeric" TextChanged="entry_TextChanged"  Margin="5"/>
+        <Button Text="Zatwierdź" Clicked="Button_Clicked" Margin="5"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.Pages.BrowseSeriesPage"
+             Title="Serie"
+             Loaded="ContentPage_Loaded" >
+    <StackLayout>
+        <ScrollView x:Name="sv" VerticalOptions="FillAndExpand"
+                    VerticalScrollBarVisibility="Always">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ActivityIndicator x:Name="aiLoading" IsVisible="True" IsRunning="True"/>
+                <FlexLayout x:Name="flContent"
+                            Wrap="Wrap"
+                            VerticalOptions="FillAndExpand"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnPre" Text="Poprzednia" Grid.Column="0" Clicked="btnPre_Clicked"/>
+                    <Label x:Name="lblPageNum" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="1" Grid.Column="1"/>
+                    <Button x:Name="btnNext" Text="Następna"  Grid.Column="2" Clicked="btnNext_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

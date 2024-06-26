@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.UI.StatSeriesView"
+             MaximumWidthRequest="400" 
+             Loaded="ContentView_Loaded"
+             Margin="5">
+    <Frame CornerRadius="15">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <!-- 1 -->
+            <Frame WidthRequest="20" HeightRequest="20" 
+           BackgroundColor="#69d539" CornerRadius="15"  
+           Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+            <Label Text="Oglądam" Grid.Row="0" Margin="10,0" Grid.Column="1"  VerticalOptions="Center"/>
+            <Label x:Name="stat_1_lblCount" Text="0" Grid.Row="0" Margin="10,0" Grid.Column="2" VerticalOptions="Center"/>
+            <ProgressBar x:Name="stat_1_progressbar"
+                         IsVisible="False"
+                         VerticalOptions="Center"
+                Grid.Row="0"  Grid.Column="3"
+                         ScaleY="3"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
+                         ProgressColor="#69d539"/>
+
+            <!-- 2 -->
+            <Frame WidthRequest="20" HeightRequest="20" 
+           BackgroundColor="#01a9ff" CornerRadius="15"
+                   VerticalOptions="Center"
+           Grid.Row="1" Grid.Column="0"/>
+            <Label Text="Obejrzane" Grid.Row="1" Margin="10,0" Grid.Column="1"  VerticalTextAlignment="Center" VerticalOptions="Center"/>
+            <Label
+                x:Name="stat_2_lblCount" 
+                Text="0" Grid.Row="1" Margin="10,0" Grid.Column="2" VerticalTextAlignment="Center"/>
+            <ProgressBar
+                 IsVisible="False"
+                x:Name="stat_2_progressbar"
+                Grid.Row="1"  Grid.Column="3"
+                ScaleY="3"
+                VerticalOptions="Center"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
+                         ProgressColor="#01a9ff"/>
+
+            <!-- 3 -->
+            <Frame WidthRequest="20" HeightRequest="20" 
+           BackgroundColor="#e75d75" CornerRadius="15"  
+           Grid.Row="2" Grid.Column="0"/>
+            <Label Text="Porzucone" Grid.Row="2" Margin="10,0" Grid.Column="1" VerticalTextAlignment="Center"/>
+            <Label 
+                x:Name="stat_3_lblCount" 
+                Text="0" Grid.Row="2" Margin="10,0" Grid.Column="2" VerticalTextAlignment="Center"/>
+            <ProgressBar
+                IsVisible="False"
+                x:Name="stat_3_progressbar"
+                Grid.Row="2"  Grid.Column="3"
+                         ScaleY="15"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
+                         ProgressColor="#e75d75"/>
+
+            <!-- 4 -->
+            <Frame WidthRequest="20" HeightRequest="20" 
+           BackgroundColor="#787878" CornerRadius="15"  
+           Grid.Row="3" Grid.Column="0"/>
+            <Label Text="Planuję" Grid.Row="3" Margin="10,0" Grid.Column="1" VerticalTextAlignment="Center"/>
+            <Label
+                x:Name="stat_4_lblCount" 
+                Text="0" Grid.Row="3" Margin="10,0" Grid.Column="2" VerticalTextAlignment="Center"/>
+            <ProgressBar 
+                IsVisible="False"
+                x:Name="stat_4_progressbar"
+                Grid.Row="3"  Grid.Column="3"
+                         ScaleY="15"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
+                         ProgressColor="#787878"/>
+
+            <!-- 5 -->
+            <Frame WidthRequest="20" HeightRequest="20" 
+           BackgroundColor="#fff903" CornerRadius="15"  
+           Grid.Row="4" Grid.Column="0"/>
+            <Label Text="Wstrzymane" Grid.Row="4" Margin="10,0" Grid.Column="1" VerticalTextAlignment="Center"/>
+            <Label 
+                x:Name="stat_5_lblCount" 
+                Text="0" Grid.Row="4" Margin="10,0" Grid.Column="2" VerticalTextAlignment="Center"/>
+            <ProgressBar
+                IsVisible="False"
+                x:Name="stat_5_progressbar"
+                Grid.Row="4"  Grid.Column="3"
+                         ScaleY="15"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
+                         ProgressColor="#fff903"/>
+        </Grid>
+    </Frame>
+    
+</ContentView>

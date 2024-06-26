@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:myui="clr-namespace:AniAppProject.UI"
+             x:Class="AniAppProject.MainPage"
+             Loaded="ContentPage_Loaded">
+
+    <StackLayout>
+
+        <ScrollView VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Always">
+            <StackLayout>
+                <WebView x:Name="webView" Source="https://docchi.pl/" ZIndex="0" Opacity="0" IsVisible="Hidden"/>
+                <StackLayout x:Name="slContent"/>
+                <StackLayout>
+                    <StackLayout Margin="5,10" >
+                        <Label Text="Kategorie" Margin="10,2,2,2" FontSize="Title" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <FlexLayout Wrap="Wrap" JustifyContent="Center">
+                            <Button Margin="2" Text="Akcja" CommandParameter="Action" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Przygodowe" CommandParameter="Adventure" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Avant Garde" CommandParameter="Avant Garde" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Zdobywca nagrody" CommandParameter="Award Winning" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="" CommandParameter="Boys Love" Clicked="ButtonCategories_Clicked" IsVisible="False"/>
+                            <Button Margin="2" Text="Komedia" CommandParameter="Comedy" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Dramat" CommandParameter="Drama" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Fantasy" CommandParameter="Fantasy" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="" CommandParameter="Girls Love" Clicked="ButtonCategories_Clicked" IsVisible="False"/>
+                            <Button Margin="2" Text="Smakosz" CommandParameter="Gourmet" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Horror" CommandParameter="Horror" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Tajemnica" CommandParameter="Mystery" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Romans" CommandParameter="Romance" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Sci-Fi" CommandParameter="Sci-Fi" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Okruchy życia" CommandParameter="Slice of Life" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Sport" CommandParameter="Sports" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Nadprzyrodzone" CommandParameter="Supernatural" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Suspens" CommandParameter="Suspense" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Ecchi" CommandParameter="Ecchi" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Erotyka" CommandParameter="Erotica" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Isekai" CommandParameter="Isekai" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Magia" CommandParameter="Magic" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Militarny" CommandParameter="Military" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Seinen" CommandParameter="Seinen" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Parodia" CommandParameter="Parody" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Mecha" CommandParameter="Mecha" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Harem" CommandParameter="Harem" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Gra" CommandParameter="Game" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Josei" CommandParameter="Josei" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Thriller" CommandParameter="Thriller" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Shoujo" CommandParameter="Shoujo" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Shounen" CommandParameter="Shounen" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Historyczny" CommandParameter="Historical" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Psychologiczny" CommandParameter="Psychological" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Steampunk" CommandParameter="Steampunk" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Cyberpunk" CommandParameter="Cyberpunk" Clicked="ButtonCategories_Clicked" />
+                            <Button Margin="2" Text="Hentai" CommandParameter="Hentai" Clicked="ButtonCategories_Clicked" IsVisible="False"/>
+                        </FlexLayout>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <Frame VerticalOptions="EndAndExpand">
+                    <StackLayout>
+                        <Button Text="Przeglądaj serie"  Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </Frame>
+
+                <Label x:Name="lblVersion"  
+                       VerticalOptions="EndAndExpand" 
+                       HorizontalOptions="Center" Margin="15" FontSize="15"/>
+
+                <Button Text="TEST"  Clicked="Button_Clicked_1" IsVisible="False"/>
+
+                <StackLayout x:Name="slLoading"
+         IsVisible="False"
+         BackgroundColor="Black"
+         VerticalOptions="FillAndExpand"
+         HorizontalOptions="FillAndExpand">
+                    <ActivityIndicator x:Name="aiLoading" 
+                                   IsVisible="True"
+                                   IsRunning="True" 
+                                   VerticalOptions="CenterAndExpand" 
+                                   HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>

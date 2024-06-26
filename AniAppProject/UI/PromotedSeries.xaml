@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.UI.PromotedSeries"
+             x:Name="promotedSeries"
+             Margin="5"
+             MaximumHeightRequest="300"
+             MaximumWidthRequest="500">
+    <Frame Padding="0" CornerRadius="15" MaximumWidthRequest="450" 
+           BackgroundColor="{AppThemeBinding Dark={StaticResource Gray900}, Light={StaticResource Gray200}}">
+        <StackLayout>
+            <Grid>
+                <Image Source="{Binding ImageSource, Source={x:Reference promotedSeries}}" VerticalOptions="FillAndExpand" Aspect="Fill"  ZIndex="0" MaximumWidthRequest="450"/>
+                <Grid ZIndex="1" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Label Grid.Row="0" Text="{Binding Title, Source={x:Reference promotedSeries}}" FontSize="Subtitle" FontAttributes="Bold" ZIndex="1"/>
+                    <HorizontalStackLayout Grid.Row="1" BackgroundColor="Transparent">
+                        <Label Text="{Binding TitleType, Source={x:Reference promotedSeries}}" TextColor="#0db060"/>
+                        <Label Text="·" Margin="5,0"/>
+                        <Label Text="Odcinki" Margin="0,0,3,0"/>
+                        <Label Text="{Binding CountEpisodes, Source={x:Reference promotedSeries}}"/>
+                        <Label Text="·" Margin="5,0"/>
+                        <Label Text="{Binding LengthEpisode, Source={x:Reference promotedSeries}}"/>
+                        <Label Text=" min"/>
+                    </HorizontalStackLayout>
+                    <Label Text="{Binding Description, Source={x:Reference promotedSeries}}" Grid.Row="2" LineBreakMode="CharacterWrap"/>
+                    <HorizontalStackLayout Grid.Row="3" VerticalOptions="EndAndExpand" BackgroundColor="Transparent" Margin="0,0,0,5">
+                        <Button x:Name="btnWatch" Clicked="btnWatch_Clicked"
+                                Text="Oglądaj" Margin="5,10"/>
+                        <Button x:Name="btnMore" Clicked="btnMore_Clicked"
+                            Text="Więcej"  Margin="5,10"/>
+                    </HorizontalStackLayout>
+                </Grid>
+            </Grid>
+            
+        </StackLayout>
+    </Frame>
+</ContentView>

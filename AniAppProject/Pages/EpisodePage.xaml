@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniAppProject.Pages.EpisodePage"
+             Loaded="ContentPage_Loaded"
+             >
+    <StackLayout VerticalOptions="FillAndExpand">
+        <ScrollView VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Always">
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Button x:Name="btnBackToSeriesPage" 
+        Text="Powrót do strony tytułu"  
+        Clicked="btnBackToSeriesPage_Clicked"  Margin="15,0"/>
+
+                <Frame Margin="15">
+                    <VerticalStackLayout>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{OnIdiom Desktop=100, Phone=80}"/>
+                                <ColumnDefinition Width="{OnIdiom Desktop=100, Phone=60}"/>
+                                <ColumnDefinition Width="{OnIdiom Desktop=100, Phone=60}"/>
+                                <ColumnDefinition Width="{OnIdiom Desktop=80, Phone=20}"/>
+                                <ColumnDefinition Width="{OnIdiom Desktop=80, Phone=80}"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Tłumacz" Grid.Column="0"/>
+                            <Label Text="Hosting" Grid.Column="1"/>
+                            <Label Text="Przetłumaczone" Grid.Column="2"/>
+                        </Grid>
+                        <StackLayout x:Name="slC"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        
+    </StackLayout>
+</ContentPage>
