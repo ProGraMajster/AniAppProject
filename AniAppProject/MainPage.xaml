@@ -82,6 +82,7 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
+        <StackLayout x:Name="slAd" />
     </StackLayout>
 
 </ContentPage>

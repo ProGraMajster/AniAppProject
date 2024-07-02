@@ -154,13 +154,14 @@ namespace AniAppProject
                 slContent.Children.Add(groupviewPromotedSeries);
 
 #if ANDROID
-     slContent.Children.Add(new Plugin.MauiMTAdmob.Controls.MTAdView()
+                slAd.Children.Add(new Plugin.MauiMTAdmob.Controls.MTAdView()
                 {
                     AdSize = Plugin.MauiMTAdmob.Extra.BannerSize.Banner,
                     AdsId = "ca-app-pub-3088807533847490/2152137882",
                     
                 });
 #endif
+                SettingsManager.CheckSettingsDir();
 
                 slLoading.IsVisible = false;
                 flc = true;

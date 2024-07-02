@@ -1,5 +1,6 @@
 using AniAppProject.Data;
 using AniAppProject.UI;
+using Plugin.MauiMTAdmob;
 using System.Diagnostics;
 namespace AniAppProject.Pages;
 
@@ -23,6 +24,9 @@ public partial class SeriesPage : ContentPage
 			{
 				return;
 			}
+#if ANDROID
+			Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.LoadInterstitial("ca-app-pub-3088807533847490/4658682034");
+#endif
 			Thread thread = new Thread(async () =>
 			{
 				Serie = await AniAppProject.Services.DocchiApi.GetSeriesAsync(Slug);
@@ -80,9 +84,17 @@ public partial class SeriesPage : ContentPage
 				threadStats.Name = "threadStats";
                 threadStats.Start();
 
+                //ca-app-pub-3088807533847490/4658682034
+
 
                 MainThread.BeginInvokeOnMainThread(() =>
 				{
+#if ANDROID
+					if(AdManager.SeriesPageFullScreenAd.AddAndCheck())
+					{
+                        CrossMauiMTAdmob.Current.ShowInterstitial();
+                    }
+#endif
 					try
 					{
 						lblTitle.Text = Serie.title;
@@ -105,8 +117,18 @@ public partial class SeriesPage : ContentPage
 
                         imgAnimePicture.Source = Serie.cover;
 						aiLoading.IsVisible = false;
-					}
-					catch (Exception ex2)
+
+#if ANDROID
+                        slAd.Children.Add(new Plugin.MauiMTAdmob.Controls.MTAdView()
+                        {
+                            AdSize = Plugin.MauiMTAdmob.Extra.BannerSize.Banner,
+                            AdsId = "ca-app-pub-3088807533847490/9883088552",
+
+                        });
+#endif
+
+                    }
+                    catch (Exception ex2)
 					{
                         Console.WriteLine(ex2.ToString());
                     }

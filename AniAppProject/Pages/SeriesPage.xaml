@@ -58,6 +58,7 @@ VerticalScrollBarVisibility="Always" ZIndex="5">
 
                     </StackLayout>
                 </ScrollView>
+                <StackLayout x:Name="slAd" />
             </StackLayout>
         </Grid>
         

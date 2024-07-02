@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-#if ANDROID
 using Plugin.MauiMTAdmob;
-#endif
+using Microsoft.Maui.LifecycleEvents;
 
 namespace AniAppProject
 {
@@ -12,9 +11,7 @@ namespace AniAppProject
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-#if ANDROID
                 .UseMauiMTAdmob()
-#endif
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
