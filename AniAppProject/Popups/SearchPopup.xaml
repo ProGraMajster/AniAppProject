@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AniAppProject.Popups.SearchPopup"
+               Color="{AppThemeBinding Dark=#2b2b2b, Light={StaticResource Gray200}}"
+               Size="380,140">
+
+    <VerticalStackLayout Padding="5">
+        <SearchBar x:Name="searchBar" Placeholder="Wyszukaj serie" SearchButtonPressed="SearchBar_SearchButtonPressed" />
+        <Label Text="Wskazówka: W wyszukiwarce można używać linki z MyAnimeList lub bezpośrednio ID serii." 
+               FontSize="13"/>
+        <Button Text="Wyszukaj" Clicked="Button_Clicked" />
+    </VerticalStackLayout>
+
+</toolkit:Popup>

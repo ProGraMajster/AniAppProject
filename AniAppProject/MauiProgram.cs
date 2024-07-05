@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Plugin.MauiMTAdmob;
 using Microsoft.Maui.LifecycleEvents;
+using CommunityToolkit.Maui;
 
 namespace AniAppProject
 {
@@ -11,6 +12,7 @@ namespace AniAppProject
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .UseMauiMTAdmob()
                 .ConfigureFonts(fonts =>
                 {

@@ -5,6 +5,10 @@
              x:Class="AniAppProject.MainPage"
              Loaded="ContentPage_Loaded">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="🔍" Clicked="ToolbarItemSearch_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
     <StackLayout>
 
         <ScrollView VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Always">

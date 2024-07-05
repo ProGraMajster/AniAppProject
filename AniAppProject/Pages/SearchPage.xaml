@@ -2,8 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AniAppProject.Pages.SearchPage"
-             Title=""
+             Title="Wyszukiwarka"
              Loaded="ContentPage_Loaded">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="🔍" Clicked="ToolbarItemSearch_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
     <StackLayout>
         <ScrollView x:Name="sv" VerticalOptions="FillAndExpand"
                 VerticalScrollBarVisibility="Always">
@@ -12,7 +16,7 @@
                 <FlexLayout x:Name="flContent"
                         Wrap="Wrap"
                         VerticalOptions="FillAndExpand"/>
-                <Grid>
+                <Grid x:Name="gridNaviagtion">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition Width="*"/>
@@ -25,5 +29,6 @@
                 </Grid>
             </StackLayout>
         </ScrollView>
+        <StackLayout x:Name="slAd" />
     </StackLayout>
 </ContentPage>

@@ -33,6 +33,32 @@ namespace AniAppProject.Services
 
         //https://docchi.pl/api/search/search?string=dar
 
+        public async static Task<SearchRespone> GetSearchAsync(string search)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    AddHeaders(httpClient);
+                    var response = await httpClient.GetAsync($"https://docchi.pl/api/search/search?string={search}");
+                    response.EnsureSuccessStatusCode();
+                    var html = await response.Content.ReadAsStringAsync();
+
+                    var r = Newtonsoft.Json.JsonConvert.DeserializeObject<SearchRespone>(html);
+
+                    return r;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Debug.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
+
+
         public async static Task<List<PreSeries>> GetsAllSeries()
         {
             using (var httpClient = new HttpClient())

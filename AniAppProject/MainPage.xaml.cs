@@ -2,6 +2,9 @@
 using Plugin.MauiMTAdmob;
 #endif
 
+using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Views;
 using HtmlAgilityPack;
 using System.Diagnostics;
 
@@ -252,11 +255,34 @@ namespace AniAppProject
                 {
                     return;
                 }
-                await Navigation.PushAsync(new Pages.SearchPage(parameter));
+                await Navigation.PushAsync(new Pages.SearchPage(parameter,true,false));
             }
             catch(Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private async void ToolbarItemSearch_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Popups.SearchPopup popup = new Popups.SearchPopup();
+                var r = await this.ShowPopupAsync(popup);
+                if (r != null)
+                {
+                    string txt = r.ToString();
+                    if(string.IsNullOrEmpty(txt))
+                    {
+                        return;
+                    }
+
+                    await Navigation.PushAsync(new Pages.SearchPage(txt, false, true));
+                }
+            }
+            catch(Exception ex)
+            {
                 Console.WriteLine(ex.ToString());
             }
         }
