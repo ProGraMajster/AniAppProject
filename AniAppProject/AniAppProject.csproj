@@ -40,30 +40,30 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android34.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>0.2</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>0.3</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>4</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>0.2</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>0.3</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>4</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android34.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>0.2</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>0.3</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>4</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>0.2</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>0.3</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
-	  <ApplicationVersion>3</ApplicationVersion>
+	  <ApplicationVersion>4</ApplicationVersion>
 	</PropertyGroup>
 
 	<ItemGroup>

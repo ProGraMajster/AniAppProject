@@ -173,15 +173,20 @@ public partial class SearchPage : ContentPage
 
     void CheckCountContent()
     {
-        if(flContent.Children.Count <= 0)
+        Thread thread = new(() =>
         {
-            Label label = new();
-            label.Text = "Brak winików :(";
-            MainThread.BeginInvokeOnMainThread(() =>
+            Thread.Sleep(1000);
+            if (flContent.Children.Count < 1)
             {
-                flContent.Children.Add(label);
-            });
-        }
+                Label label = new();
+                label.Text = "Brak winików :(";
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    flContent.Children.Add(label);
+                });
+            }
+        });
+        thread.Start();
     }
 
     async void Reload()
