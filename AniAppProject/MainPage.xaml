@@ -61,11 +61,11 @@
                 </StackLayout>
 
 
-                <Frame VerticalOptions="EndAndExpand">
+                <Border VerticalOptions="EndAndExpand">
                     <StackLayout>
                         <Button Text="Przeglądaj serie"  Clicked="Button_Clicked"/>
                     </StackLayout>
-                </Frame>
+                </Border>
 
                 <Label x:Name="lblVersion"  
                        VerticalOptions="EndAndExpand" 

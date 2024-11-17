@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 namespace AniAppProject.Services
 {
     public static class DocchiApi
-    {
+    {   
         static List<PreSeries> CachePreSeriesList;
         static DateTime DateTimeCachePreSeriesList;
 

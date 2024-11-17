@@ -1,0 +1,65 @@
+﻿[
+  {
+    "ImageSource": "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fbluelocks2.png&w=1920&q=75",
+    "Title": "Blue Lock vs. U-20 Japan",
+    "TitleType": "TV",
+    "CountEpisodes": "15",
+    "LengthEpisode": "25",
+    "Description": "Drugi sezon Blue Lock",
+    "Slug": "blue-lock-2nd-season"
+  },
+  {
+    "ImageSource": "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fbleach.png&w=1920&q=75",
+    "Title": "Bleach: Sennen Kessen-hen - Soukoku-tan",
+    "TitleType": "TV",
+    "CountEpisodes": "14",
+    "LengthEpisode": "24",
+    "Description": "Trzecia z czterech części finałowego arc'u bleacha zwanego thousand year blood war. Jest to kontynuacja przygody Ichigo Kurosakiego na drodze do osiągnięcia swojego celu",
+    "Slug": "bleach-sennen-kessen-hen-soukoku-tan"
+  },
+  {
+    "ImageSource": "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Frezero.png&w=1920&q=75",
+    "Title": "Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season",
+    "TitleType": "TV",
+    "CountEpisodes": "16",
+    "LengthEpisode": "29",
+    "Description": "3-ci sezon serii Re:Zero kara Hajimeru Isekai Seikatsu. Od zwycięstwa Natsukiego Subaru i wyzwolenia Sanktuarium minął rok. Spokojne życie głównego bohatera zostaje jednak przerwane przez nagłe zaproszenie do miasta Priestella, wysłane z rąk Anastasii, rywalki Emilii w zbliżającej się selekcji królewskiej.",
+    "Slug": "rezero-kara-hajimeru-isekai-seikatsu-3rd-season"
+  },
+  {
+    "ImageSource": "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fseirei.png&w=1920&q=75",
+    "Title": "Seirei Gensouki 2nd Season",
+    "TitleType": "TV",
+    "CountEpisodes": "12",
+    "LengthEpisode": "24",
+    "Description": "Drugi sezon Seirei Gensouki",
+    "Slug": "seirei-gensouki-2"
+  },
+  {
+    "ImageSource": "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Frurouni.png&w=1920&q=75",
+    "Title": "Rurouni Kenshin: Meiji Kenkaku Romantan - Kyoto Douran",
+    "TitleType": "TV",
+    "CountEpisodes": "23",
+    "LengthEpisode": "22",
+    "Description": "Drugi sezon Rurouni Kenshin: Meiji Kenkaku Romantan (2023).",
+    "Slug": "rurouni-kenshin-meiji-kenkaku-romantan-kyoto-douran"
+  },
+  {
+    "ImageSource": "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fsao.png&w=1920&q=75",
+    "Title": "Sword Art Online Alternative: Gun Gale Online II",
+    "TitleType": "TV",
+    "CountEpisodes": "12",
+    "LengthEpisode": "24",
+    "Description": "Drugi sezon Sword Art Online Alternative: Gun Gale Online z 2018 r.",
+    "Slug": "sword-art-online-alternative-gun-gale-online-ii"
+  },
+  {
+    "ImageSource": "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fkamierabi.png&w=1920&q=75",
+    "Title": "Kamierabi 2nd Season",
+    "TitleType": "TV",
+    "CountEpisodes": "12",
+    "LengthEpisode": "23",
+    "Description": "Drugi sezon serii Kamierabi",
+    "Slug": "kamierabi-2nd-season"
+  }
+]

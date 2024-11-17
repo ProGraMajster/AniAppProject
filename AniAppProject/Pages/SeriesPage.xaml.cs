@@ -25,9 +25,9 @@ public partial class SeriesPage : ContentPage
 				return;
 			}
 #if ANDROID
-			Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.LoadInterstitial("ca-app-pub-3088807533847490/4658682034");
+			Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.LoadInterstitial("ca-app-pub-3088807533847490/5601347516");
 #endif
-			Thread thread = new Thread(async () =>
+            Thread thread = new Thread(async () =>
 			{
 				Serie = await AniAppProject.Services.DocchiApi.GetSeriesAsync(Slug);
 				if(Serie == null)
@@ -122,7 +122,7 @@ public partial class SeriesPage : ContentPage
                         slAd.Children.Add(new Plugin.MauiMTAdmob.Controls.MTAdView()
                         {
                             AdSize = Plugin.MauiMTAdmob.Extra.BannerSize.Banner,
-                            AdsId = "ca-app-pub-3088807533847490/9883088552",
+                            AdsId = "ca-app-pub-3088807533847490/8638745837",
 
                         });
 #endif

@@ -11,7 +11,7 @@ namespace AniAppProject
 Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.UserPersonalizedAds = true;
 Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.ComplyWithFamilyPolicies = true;
 Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.UseRestrictedDataProcessing = true;
-Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.AdsId = "ca-app-pub-3088807533847490/2152137882";
+Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.AdsId = "ca-app-pub-3088807533847490/8888085903";
 Plugin.MauiMTAdmob.CrossMauiMTAdmob.Current.TestDevices = new List<string>() { };
     /*if (!SettingsManager.AFCGPS.GetState())
             {

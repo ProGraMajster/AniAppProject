@@ -1,12 +1,15 @@
 ﻿#if ANDROID
 using Plugin.MauiMTAdmob;
 #endif
-
+using AniAppProject.Data;
+using AniAppProject.Services;
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 using HtmlAgilityPack;
 using System.Diagnostics;
+using System.Net;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AniAppProject
 {
@@ -18,7 +21,7 @@ namespace AniAppProject
             lblVersion.Text = "Wersja: " + AppInfo.Current.Version.ToString();
         }
         bool flc = false;
-        private void ContentPage_Loaded(object sender, EventArgs e)
+        private async Task ContentPage_LoadedAsync(object sender, EventArgs e)
         {
             Thread thread = new Thread(async () =>
             {
@@ -52,118 +55,56 @@ namespace AniAppProject
 
             if (flc == false)
             {
-                UI.GroupView groupviewPromotedSeries = new UI.GroupView();
-                groupviewPromotedSeries.Title = "Promowane serie";
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fmushoku-tensei-ii.png&w=1920&q=75",
-                    Title = "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2",
-                    TitleType = "TV",
-                    CountEpisodes = "12",
-                    LengthEpisode = "23",
-                    Description = "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2",
-                    Slug = "mushoku-tensei-ii-isekai-ittara-honki-dasu-part-2"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fboku-no-hero-academia-7th-season.png&w=1920&q=75",
-                    Title = "Boku no Hero Academia 7th Season",
-                    TitleType = "TV",
-                    CountEpisodes = "12",
-                    LengthEpisode = "23",
-                    Description = "7th season of Boku no Hero Academia",
-                    Slug = "boku-no-hero-academia-7th-season"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fdate-a-live-v.png&w=1920&q=75",
-                    Title = "Date A Live V",
-                    TitleType = "TV",
-                    CountEpisodes = "12",
-                    LengthEpisode = "23",
-                    Description = "Piąty sezon Date A Live.",
-                    Slug = "date-a-live-v"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fookami-to-koushinryou.png&w=1920&q=75",
-                    Title = "Ookami to Koushinryou: Merchant Meets the Wise Wolf",
-                    TitleType = "TV",
-                    CountEpisodes = "25",
-                    LengthEpisode = "23",
-                    Description = "Lawrence jest podróżującym kupcem sprzedającym różne towary z wozem konnym. Pewnego dnia przybywa do wioski i spotyka piękną dziewczynę z uszami i ogonem zwierzęcia! Dziewczyna nazywa się Holo i przynosi obfite żniwa. Pragnie wrócić do ojczyzny, a Lawrence proponuje, że ją tam zabierze. Niegdyś samotny kupiec i były samotny wilk rozpoczynają podróż na północ.",
-                    Slug = "ookami-to-koushinryou-merchant-meets-the-wise-wolf"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fkono-subarashii-sekai-ni-shukufuku-wo-3.png&w=1920&q=75",
-                    Title = "Kono Subarashii Sekai ni Shukufuku wo! 3",
-                    TitleType = "TV",
-                    CountEpisodes = "11",
-                    LengthEpisode = "23",
-                    Description = "Third season of Kono Subarashii Sekai ni Shukufuku wo!",
-                    Slug = "kono-subarashii-sekai-ni-shukufuku-wo-3"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fremonster.png&w=1920&q=75",
-                    Title = "Re:Monster",
-                    TitleType = "TV",
-                    CountEpisodes = "12",
-                    LengthEpisode = "23",
-                    Description = "Tomokui Kanata zmarł przedwcześnie, ale jego przygody jeszcze się nie skończyły. Odrodził się w fantastycznym świecie potworów i magii jako skromny goblin! Ale Kanata, czyli Gob-Rou, jak go teraz nazywają, nie zamierza pozwolić, aby to go powstrzymało. Dzięki połączeniu wspomnień ze swojego starego życia, zupełnie nowemu ciału i potwornemu apetytowi, Gob-Rou prosperuje w nowym świecie, w którym musi pożerać inne stworzenia, aby zdobyć ich moce. Aby przetrwać w tym pełnym akcji fantasy, potrzeba siły, sprytu i silnego żołądka!",
-                    Slug = "remonster"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Ftensei-shitara-slime-datta-ken-3rd-season.png&w=1920&q=75",
-                    Title = "Tensei shitara Slime Datta Ken 3rd Season",
-                    TitleType = "TV",
-                    CountEpisodes = "24",
-                    LengthEpisode = "24",
-                    Description = "3 Sezon Tensei shitara Slime Datta Ken.",
-                    Slug = "tensei-shitara-slime-datta-ken-3rd-season"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Flv2-kara-cheat-datta-motoyuusha-kouho-no-mattari-isekai-life.png&w=1920&q=75",
-                    Title = "Lv2 kara Cheat datta Motoyuusha Kouho no Mattari Isekai Life",
-                    TitleType = "TV",
-                    CountEpisodes = "12",
-                    LengthEpisode = "24",
-                    Description = "Magiczne Królestwo Klyrode co roku przywołuje setki bohaterów z innych światów, aby walczyli w wojnie przeciwko \"Ciemnemu\" i jego armii potężnych demonów. Banaza to jeden z tych bohaterów, wezwany z Królewskiej Stolicy Paluma, jednak coś jest nie tak – Banaza jest tylko przeciętnym kupcem, nie posiada magii, zdolności bojowych, a jego statystyki są fatalne. Co gorsza, w wyniku nieszczęśliwego wypadku nie będzie mógł wrócić do domu! Odrzucony jako bohater i uwięziony w innym świecie, porzucony w odległych zakątkach królestwa przez okrutnego króla, który pragnie jego śmierci. Ale co się stanie, gdy nieudany kandydat na bohatera odkryje super moce oszustwa i osiągnie drugi poziom?",
-                    Slug = "lv2-kara-cheat-datta-motoyuusha-kouho-no-mattari-isekai-life"
-                });
-
-                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
-                {
-                    ImageSource = "https://docchi.pl/_next/image?url=%2Fstatic%2Fimg%2Fslider%2Fdekisokonai-to-yobareta-motoeiyuu-wa-jikka-kara-tsuihou-sareta-node-sukikatte-ni-ikiru-koto-ni-shita.png&w=1920&q=75",
-                    Title = "Dekisokonai to Yobareta Motoeiyuu wa Jikka kara Tsuihou sareta node Sukikatte ni Ikiru Koto ni Shita",
-                    TitleType = "TV",
-                    CountEpisodes = "12",
-                    LengthEpisode = "23",
-                    Description = "Fabuła serii koncentruje się na świecie, w którym potężne \"błogosławieństwa i dary od bogów\" są przekazywane tym, którzy osiągnęli dorosłość, a \"dary\", które dana osoba otrzyma, zadecydują o jej życiu. Ale Allen nie był w stanie uzyskać żadnej mocy, więc został wyśmiany i wyszydzony, a ostatecznie wygnany ze swojego domu. Decyduje się na spokojne życie w odległej krainie. Ludzie nie wiedzą jednak, że Allen ma wspomnienia (i moce) ze swojego poprzedniego życia jako bohater.\r\n\r\nActionAdventureFantasy\r\nPowiązane serie",
-                    Slug = "dekisokonai-to-yobareta-motoeiyuu-wa-jikka-kara-tsuihou-sareta-node-sukikatte-ni-ikiru-koto-ni-shita"
-                });
-
-                slContent.Children.Add(groupviewPromotedSeries);
-
 #if ANDROID
                 slAd.Children.Add(new Plugin.MauiMTAdmob.Controls.MTAdView()
                 {
                     AdSize = Plugin.MauiMTAdmob.Extra.BannerSize.Banner,
-                    AdsId = "ca-app-pub-3088807533847490/2152137882",
+                    AdsId = "ca-app-pub-3088807533847490/8888085903",
                     
                 });
 #endif
+                //https://raw.githubusercontent.com/ProGraMajster/AniAppProject/refs/heads/master/AniAppProject/Pages/EpisodePage.xaml.cs
+
+                try
+                {
+
+                    UI.GroupView groupviewPromotedSeries = new UI.GroupView();
+                    groupviewPromotedSeries.Title = "Promowane serie";
+                    using (var httpClient = new HttpClient())
+                    {
+                        httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
+                        httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
+                        httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
+                        var response = await httpClient.GetAsync($"https://raw.githubusercontent.com/ProGraMajster/AniAppProject/refs/heads/master/AniAppProject/OnlineContent/PromotedSeries/PromotedSeries.json");
+                        response.EnsureSuccessStatusCode();
+                        var html = await response.Content.ReadAsStringAsync();
+
+                        var r = System.Text.Json.JsonSerializer.Deserialize<List<Data.PromotedSeriesData>>(html);
+
+                        foreach ( var item in r)
+                        {
+                            groupviewPromotedSeries.AddView(new UI.PromotedSeries()
+                            {
+                                ImageSource = item.ImageSource,
+                                Title = item.Title,
+                                TitleType = item.TitleType,
+                                CountEpisodes = item.CountEpisodes,
+                                LengthEpisode = item.LengthEpisode,
+                                Description = item.Description,
+                                Slug = item.Slug
+                            });
+                        }
+                    }
+
+
+                    slContent.Children.Add(groupviewPromotedSeries);
+                }
+                catch(Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                }
+
+
                 SettingsManager.CheckSettingsDir();
 
                 slLoading.IsVisible = false;
