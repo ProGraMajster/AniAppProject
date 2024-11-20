@@ -4,6 +4,7 @@
              x:Class="AniAppProject.UI.EpisodesSeriesView"
              Loaded="ContentView_Loaded"
              MinimumWidthRequest="150"
+             MaximumWidthRequest="250"
              Margin="2"
              >
     <Frame
@@ -15,7 +16,7 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            <ImageButton x:Name="img" Grid.Row="0" Clicked="img_Clicked" Aspect="Fill" BackgroundColor="Transparent"/>
+            <ImageButton x:Name="img" Grid.Row="0" Clicked="img_Clicked" Aspect="AspectFill" BackgroundColor="Transparent"/>
             <Label x:Name="lblEp" Grid.Row="1" />
             <Label x:Name="lblDate" Grid.Row="2"/>
             <Button BackgroundColor="Transparent" ZIndex="3" VerticalOptions="FillAndExpand" Clicked="Button_Clicked"/>

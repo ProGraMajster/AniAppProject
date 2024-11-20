@@ -7,7 +7,7 @@
     <StackLayout>
         <Label Text="{Binding Title, Source={x:Reference groupView}}" Margin="10,2,2,2" FontSize="Title" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
         <ScrollView Orientation="Both" HorizontalScrollBarVisibility="Always">
-            <HorizontalStackLayout x:Name="hsl"/>
+            <HorizontalStackLayout x:Name="hsl" Padding="10" />
         </ScrollView>
     </StackLayout>
 </ContentView>

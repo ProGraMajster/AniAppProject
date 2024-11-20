@@ -11,7 +11,9 @@
                 <ActivityIndicator x:Name="aiLoading" IsVisible="True" IsRunning="True"/>
                 <FlexLayout x:Name="flContent"
                             Wrap="Wrap"
-                            VerticalOptions="FillAndExpand"/>
+                            VerticalOptions="FillAndExpand"
+                            AlignContent="Start"
+                            AlignItems="Start"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"/>

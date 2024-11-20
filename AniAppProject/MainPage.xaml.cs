@@ -8,8 +8,6 @@ using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 using HtmlAgilityPack;
 using System.Diagnostics;
-using System.Net;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AniAppProject
 {
@@ -21,7 +19,7 @@ namespace AniAppProject
             lblVersion.Text = "Wersja: " + AppInfo.Current.Version.ToString();
         }
         bool flc = false;
-        private async Task ContentPage_LoadedAsync(object sender, EventArgs e)
+        private async void ContentPage_Loaded(object sender, EventArgs e)
         {
             Thread thread = new Thread(async () =>
             {
@@ -65,50 +63,66 @@ namespace AniAppProject
 #endif
                 //https://raw.githubusercontent.com/ProGraMajster/AniAppProject/refs/heads/master/AniAppProject/Pages/EpisodePage.xaml.cs
 
-                try
+                Thread threadLM = new(async () =>
                 {
-
-                    UI.GroupView groupviewPromotedSeries = new UI.GroupView();
-                    groupviewPromotedSeries.Title = "Promowane serie";
-                    using (var httpClient = new HttpClient())
+                    try
                     {
-                        httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
-                        httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
-                        httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
-                        var response = await httpClient.GetAsync($"https://raw.githubusercontent.com/ProGraMajster/AniAppProject/refs/heads/master/AniAppProject/OnlineContent/PromotedSeries/PromotedSeries.json");
-                        response.EnsureSuccessStatusCode();
-                        var html = await response.Content.ReadAsStringAsync();
 
-                        var r = System.Text.Json.JsonSerializer.Deserialize<List<Data.PromotedSeriesData>>(html);
-
-                        foreach ( var item in r)
+                        UI.GroupView groupviewPromotedSeries = new UI.GroupView();
+                        groupviewPromotedSeries.Title = "Promowane serie";
+                        using (var httpClient = new HttpClient())
                         {
-                            groupviewPromotedSeries.AddView(new UI.PromotedSeries()
+                            httpClient.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
+                            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
+                            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
+                            var response = await httpClient.GetAsync($"https://raw.githubusercontent.com/ProGraMajster/AniAppProject/refs/heads/master/AniAppProject/OnlineContent/PromotedSeries/PromotedSeries.json");
+                            response.EnsureSuccessStatusCode();
+                            var html = await response.Content.ReadAsStringAsync();
+
+                            var r = System.Text.Json.JsonSerializer.Deserialize<List<Data.PromotedSeriesData>>(html);
+
+                            foreach (var item in r)
                             {
-                                ImageSource = item.ImageSource,
-                                Title = item.Title,
-                                TitleType = item.TitleType,
-                                CountEpisodes = item.CountEpisodes,
-                                LengthEpisode = item.LengthEpisode,
-                                Description = item.Description,
-                                Slug = item.Slug
-                            });
+                                groupviewPromotedSeries.AddView(new UI.PromotedSeries()
+                                {
+                                    ImageSource = item.ImageSource,
+                                    Title = item.Title,
+                                    TitleType = item.TitleType,
+                                    CountEpisodes = item.CountEpisodes,
+                                    LengthEpisode = item.LengthEpisode,
+                                    Description = item.Description,
+                                    Slug = item.Slug
+                                });
+                            }
                         }
+
+                        MainThread.BeginInvokeOnMainThread(() =>
+                        {
+                            try
+                            {
+                                slContent.Children.Add(groupviewPromotedSeries);
+                            }
+                            catch (Exception exMT)
+                            {
+                                Debug.WriteLine(exMT);
+                            }
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.ToString());
+                        Console.WriteLine(ex.ToString());
                     }
 
+                    MainThread.BeginInvokeOnMainThread(() =>
+                    {
+                        SettingsManager.CheckSettingsDir();
 
-                    slContent.Children.Add(groupviewPromotedSeries);
-                }
-                catch(Exception ex)
-                {
-                    Debug.WriteLine(ex.ToString());
-                }
-
-
-                SettingsManager.CheckSettingsDir();
-
-                slLoading.IsVisible = false;
-                flc = true;
+                        slLoading.IsVisible = false;
+                        flc = true;
+                    });
+                });
+                threadLM.Start();
             }
 
         }

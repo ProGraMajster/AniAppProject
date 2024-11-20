@@ -52,7 +52,7 @@ VerticalScrollBarVisibility="Always" ZIndex="5">
                         </ScrollView>
 
 
-                        <FlexLayout x:Name="slEps"  Margin="15" Wrap="Wrap"/>
+                        <FlexLayout x:Name="slEps"  Margin="15" Wrap="Wrap" AlignContent="Start" AlignItems="Start"/>
 
                         <StackLayout x:Name="slStats" Margin="15,0"/>
 

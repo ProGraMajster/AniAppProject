@@ -6,11 +6,13 @@
              Margin="5"
              MaximumHeightRequest="300"
              MaximumWidthRequest="500">
-    <Frame Padding="0" CornerRadius="15" MaximumWidthRequest="450" 
+    <Border Padding="0" StrokeThickness="1"
+            
+        StrokeShape="RoundRectangle 15,15,15,15" MaximumWidthRequest="450" 
            BackgroundColor="{AppThemeBinding Dark={StaticResource Gray900}, Light={StaticResource Gray200}}">
         <StackLayout>
             <Grid>
-                <Image Source="{Binding ImageSource, Source={x:Reference promotedSeries}}" VerticalOptions="FillAndExpand" Aspect="Fill"  ZIndex="0" MaximumWidthRequest="450"/>
+                <Image x:Name="image" Loaded="Image_Loaded" Source="{Binding ImageSource, Source={x:Reference promotedSeries}}"  VerticalOptions="FillAndExpand" Aspect="Fill"  ZIndex="0" MaximumWidthRequest="450"/>
                 <Grid ZIndex="1" Padding="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
@@ -41,5 +43,5 @@
             </Grid>
             
         </StackLayout>
-    </Frame>
+    </Border>
 </ContentView>

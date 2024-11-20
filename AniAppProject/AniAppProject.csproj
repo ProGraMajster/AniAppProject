@@ -39,21 +39,21 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android35.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>1</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
 	  <ApplicationVersion>5</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>1</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
 	  <ApplicationVersion>5</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android35.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>1</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
 	  <ApplicationVersion>5</ApplicationVersion>
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
@@ -61,7 +61,7 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationTitle>AniApp</ApplicationTitle>
-	  <ApplicationDisplayVersion>1</ApplicationDisplayVersion>
+	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	  <ApplicationId>com.programajster.aniappproject</ApplicationId>
 	  <ApplicationVersion>5</ApplicationVersion>
 	</PropertyGroup>

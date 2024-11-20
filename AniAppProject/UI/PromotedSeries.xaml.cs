@@ -106,4 +106,20 @@ public partial class PromotedSeries : ContentView
             Console.WriteLine(ex.ToString());
         }
     }
+
+    private async void Image_Loaded(object sender, EventArgs e)
+    {
+		try
+		{
+            var res = await image.Source.GetPlatformImageAsync(Handler.MauiContext);
+            if (res == null)
+            {
+				image.Source = ImageSource;
+            }
+        }
+		catch(Exception ex)
+		{
+			Debug.WriteLine("Image_Loaded: \n"+ ex.ToString());
+		}
+    }
 }
